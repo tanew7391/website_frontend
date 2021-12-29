@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap');
 
+
 @keyframes enlarge {
     from {
         max-width: 50%;  
@@ -12,6 +13,7 @@
 }
 
 body {
+    background-image: url("https://resi.ze-robot.com/dl/4k/4k-desktop-wallpaper.-1920%C3%971080.jpg");
     background-color: #2a4a5c;
 }
 
@@ -22,26 +24,37 @@ h1 {
 }
 
 .listbody {
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     img {
         border-radius: 50%;
-        max-width: 50%;  
-        max-height: 50%;  
+        width: 50%;  
+        height: 50%;  
         transition: 0.3s;
     }
     img:hover {
-        max-width: 100%;  
-        max-height: 100%;  
+        width: 100%;  
+        height: 100%;  
     }
     .desc {
         visibility: hidden;
+        opacity: 0;
         color: white;
+        transition: 0.3s;
     }
-    .onHover:hover + .desc{
+    img:hover + .desc{
         visibility: visible;
+        opacity: 1;
     }
     height: 60vh; 
-    
 }
+
+img:hover > body {
+    filter: blur(2px);
+  }
 
 .sideBar {
     overflow-y: scroll;

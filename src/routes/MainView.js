@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import { Link } from "react-router-dom";
 import { v4 } from 'uuid'
+import { useNavigate } from 'react-router-dom';
 
 class MainView extends Component {
 
@@ -48,8 +49,8 @@ const LinkList = (props) => {
             <Container fluid="true">
                 <Row className="align-items-center">
                     {props.links.map(link => (
-                        <Col key={link.id}>
-                                <LinkObj link={link} />
+                        <Col key={link.id} className="item">
+                            <LinkObj link={link} />
                         </Col>
                     ))}
                 </Row>
@@ -61,17 +62,19 @@ const LinkList = (props) => {
 const LinkObj = (props) => {
     const { title, href, icon, external } = props.link
 
-    if (external) {
-        return (
-            <>
-                <a href={href} className="d-flex justify-content-center onHover">
-                    <img src={icon} alt={title} />
-                </a>
-                <h4 className="desc">{title}</h4>
-            </>
-            
-            )
-    }
-    return (<Link to={href} className="d-flex justify-content-center"><img src={icon} alt={title} /></Link>)
+    const navigate = useNavigate();
 
+    const redirect = (href, external) => {
+        if (external) {
+            navigate(href)
+        } else {
+            window.location.href = href;
+        }
+    }
+    return (
+        <>
+        <img src={icon} alt={title} onClick={() => { redirect(href) }} />
+        <h4 className="desc">{title}</h4>
+        </>
+    )
 }
