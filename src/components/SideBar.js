@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 
-class Header extends Component {
+class SideBar extends Component {
     render() {
         return (
-            <div>
-                <h1>Header</h1>
+            <div className="sideBar">
+                <h1>SideBar</h1>
                 <NavBar />
             </div>
         );
     }
 }
-export default Header;
+export default SideBar;

@@ -1,9 +1,10 @@
 import React from "react";
 
-Footer = () => {
+const NavBar = () => {
     return (
         <div>
+            <h1>NavBar</h1>
         </div>
     );
 }
-export default ViewContainer;
+export default NavBar;
