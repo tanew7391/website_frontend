@@ -7,7 +7,6 @@ import './app.scss'
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className='background'/>
     <ViewContainer />
   </React.StrictMode>,
   document.getElementById('root')

@@ -4,6 +4,7 @@ import SideBar from "./SideBar";
 import Footer from "./Footer";
 import MainView from "../routes/MainView";
 import Error from "../routes/Error";
+import Experience from "../routes/Experience";
 
 class ViewContainer extends Component {
     render() {
@@ -11,7 +12,8 @@ class ViewContainer extends Component {
             <div>
                 <Router>
                     <Routes>
-                        <Route path="/" element={<MainView />} />
+                        <Route path="/" element={<MainView />}/>
+                        <Route path="/experience/*" element={<Experience />}/>
                         <Route path="*" element={<Error errorVal={404}/>}/>
                     </Routes>
                 </Router>
