@@ -3,7 +3,7 @@ import LinkList from "../components/LinkList";
 import Resume from "./Resume";
 import { v4 } from "uuid";
 import { Routes, Route } from "react-router-dom";
-import Workterm from "./Resume copy";
+import Workterm from "./Workterm";
 import Error from "./Error";
 
 class Experience extends React.Component {
@@ -34,7 +34,7 @@ class Experience extends React.Component {
             <Routes>
                 <Route path="/" element={
                     <>
-                        <h1>Experiences</h1>
+                        <h1 className="introCard">Experiences</h1>
                         <LinkList links={this.sections} />
                     </>
                 }/>

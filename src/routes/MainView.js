@@ -8,7 +8,7 @@ class MainView extends Component {
         {
             title: "GitHub",
             href: "https://github.com/tanew7391",
-            icon: "https://avatars.githubusercontent.com/u/7423736?v=4",
+            icon: "https://cdn3.iconfinder.com/data/icons/inficons/512/github.png",
             desc: "Click to go to my GitHub page.",
             external: true,
             id: v4()
@@ -34,7 +34,11 @@ class MainView extends Component {
     render() {
         return (
             <>
-                <h1>Taylor Newman</h1>
+                <div className="introCard">
+                    {/* <img src="https://avatars.githubusercontent.com/u/7423736?v=4"/> */}
+                    <h1>Taylor Newman</h1>
+                    <h4>Computer Science Student at the University of Guelph</h4>
+                </div>
                 <LinkList links={this.sections} />
             </>
         )
