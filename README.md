@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Todo: 
+Make background blur when hovering over one image
+Make column style when screen size is too small - done
+Add Breadcrumbs to top of screen
+Add touch detection:
+``` javascript
+document.documentElement.className += 
+    (("ontouchstart" in document.documentElement) ? ' touch' : ' no-touch');
+```
+Add image next to header on main page
+Do custom font for non-headers
