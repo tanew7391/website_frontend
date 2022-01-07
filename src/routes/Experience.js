@@ -5,6 +5,7 @@ import { v4 } from "uuid";
 import { Routes, Route } from "react-router-dom";
 import Workterm from "./Workterm";
 import Error from "./Error";
+import Navbar from "../components/NavBar"
 
 class Experience extends React.Component {
 
@@ -30,7 +31,7 @@ class Experience extends React.Component {
     render () {
         return (
         <>
-            
+            <Navbar/>
             <Routes>
                 <Route path="/" element={
                     <>

@@ -5,6 +5,8 @@ import Post from "../components/Post"
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Navbar from "../components/NavBar"
+
 
 class MusicBlog extends React.Component {
 
@@ -25,13 +27,14 @@ class MusicBlog extends React.Component {
 
         return (
             <>
+                <Navbar/>
                 <div className="introCard">
                     <h1>Music Blog</h1>
                 </div>
                 <Container fluid>
                     <Row>
                         <Col md="auto">
-                            <SideBar links={this.state.links} />
+                            <SideBar links={this.state.links}/>
                         </Col>
                         <Col>
                             <Routes>
@@ -40,7 +43,7 @@ class MusicBlog extends React.Component {
                                         <h4>Pick Blog Post</h4>
                                     </>
                                 } />
-                                <Route path="*" element={<Post />} />
+                                <Route path="/:postid" element={<Post />} />
                             </Routes>
                         </Col>
                     </Row>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { v4 } from 'uuid'
 import LinkList from "../components/LinkList";
+import ExperienceImg from '../static/img/experience.jpg'
 
 class MainView extends Component {
 
@@ -16,7 +17,7 @@ class MainView extends Component {
         {
             title: "Experience",
             href: "/experience",
-            icon: "https://thumbs.dreamstime.com/b/written-paper-icon-vector-sign-symbol-isolated-white-back-background-your-web-mobile-app-design-logo-concept-133754707.jpg",
+            icon: ExperienceImg,
             desc: "Click to see my resume and work experiences.",
             external: false,
             id: v4()
@@ -37,7 +38,7 @@ class MainView extends Component {
                 <div className="introCard">
                     {/* <img src="https://avatars.githubusercontent.com/u/7423736?v=4"/> */}
                     <h1>Taylor Newman</h1>
-                    <h4>Computer Science Student at the University of Guelph</h4>
+                    <h4>Third Year Computer Science Student at the University of Guelph</h4>
                 </div>
                 <LinkList links={this.sections} />
             </>
