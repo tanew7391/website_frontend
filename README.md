@@ -2,8 +2,8 @@
 This is a repo containing my personal website frontend code.
 Written with React.
 
-The subdirectory ```components``` contains resuable React components that are used throughout the site.
-The subdirectory ```routes``` contains different 'main views'. The React router will point to these routes. These routes use a collection of components.
+The subdirectory ```src/components``` contains resuable React components that are used throughout the site.
+The subdirectory ```src/routes``` contains different 'main views'. The React router will point to these routes. These routes use a collection of components.
 
 # Todo: 
  - Make background blur when hovering over one image
