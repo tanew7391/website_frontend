@@ -15,12 +15,6 @@ const postList = [
     }
 ]
 
-const postLocation = [
-    {
-        "my-first-blog-post": path.join(__dirname, 'blog_posts', 'a.md')
-    }
-]
-
 app.get('/api/blog-post-list', function (req, res) {
     res.json(postList);
 });
