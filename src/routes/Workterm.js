@@ -35,16 +35,20 @@ const Workterm = (props) => {
                 <ReactMarkdown>
                     {par2}
                 </ReactMarkdown>
+                <br/>
                 <h2>Goals</h2>
                 <p>{par3}</p>
+                <br/>
                 <h4>Goal 1</h4>
                 <p>{goal1}</p>
                 <h4>Reflection</h4>
                 <p>{refl1}</p>
+                <br/>
                 <h4>Goal 2</h4>
                 <p>{goal2}</p>
                 <h4>Reflection</h4>
                 <p>{refl2}</p>
+                <br/>
                 <h4>Goal 3</h4>
                 <p>{goal3}</p>
                 <h4>Reflection</h4>
@@ -53,6 +57,7 @@ const Workterm = (props) => {
                 <ReactMarkdown>
                     {par4}
                 </ReactMarkdown>
+                <br/>
                 <ReactMarkdown>
                     {jobDesc}
                 </ReactMarkdown>
