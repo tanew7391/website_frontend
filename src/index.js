@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ViewContainer from './components/ViewContainer';
+import 'react-app-polyfill/ie11';
+import 'core-js/es';
 /* import reportWebVitals from './reportWebVitals';
  */
 import 'bootstrap/dist/css/bootstrap.min.css';
