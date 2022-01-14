@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Workterm from "./Workterm";
 import Error from "./Error";
 import Navbar from "../components/NavBar"
+import AAFC from "../static/img/AAFC.jpg"
 
 class Experience extends React.Component {
 
@@ -21,7 +22,7 @@ class Experience extends React.Component {
         {
             title: "Agriculture Canada 2021",
             href: "aafc2021",
-            icon: "https://cdn.wallpapersafari.com/36/67/LX2C7J.jpg",
+            icon: AAFC,
             desc: "My work experience at Agriculture Canada 2021",
             external: false,
             id: v4()

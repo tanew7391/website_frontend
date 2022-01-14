@@ -9,17 +9,22 @@ import MusicBlog from "../routes/MusicBlog"
 class ViewContainer extends Component {
     render() {
         return (
-            <div>
-                <Router>
-                    <Routes>
-                        <Route path="/" element={<MainView />}/>
-                        <Route path="/experience/*" element={<Experience />}/>
-                        <Route path="/blog/*" element={<MusicBlog />}/>
-                        <Route path="*" element={<Error errorVal={404}/>}/>
-                    </Routes>
-                </Router>
-                <Footer />
+            <div className="main">
+                <div style={{flex:"1 0 auto"}}>
+                    <Router>
+                        <Routes>
+                            <Route path="/" element={<MainView />} />
+                            <Route path="/experience/*" element={<Experience />} />
+                            <Route path="/blog/*" element={<MusicBlog />} />
+                            <Route path="*" element={<Error errorVal={404} />} />
+                        </Routes>
+                    </Router>
+                </div>
+                <div style={{flexShrink:0}}>
+                    <Footer />
+                </div>
             </div>
+
         );
     }
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { v4 } from 'uuid'
 import LinkList from "../components/LinkList";
 import ExperienceImg from '../static/img/experience.jpg'
+import MusicImg from "../static/img/music.jpg"
 
 class MainView extends Component {
 
@@ -26,7 +27,7 @@ class MainView extends Component {
             title: "Music Blog",
             href: "/blog",
             desc: "Click to see what I'm listening to right now.",
-            icon: "https://media.istockphoto.com/vectors/music-note-icon-on-white-background-vector-vector-id1141530936",
+            icon: MusicImg,
             external: false,
             id: v4()
         }

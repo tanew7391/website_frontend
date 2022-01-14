@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap');
 
+html, body, #root {
+    height: 100%;
+}
+
+.main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     background-color: #2a4a5c;
     color: aliceblue;
@@ -11,12 +21,16 @@ h1 {
 }
 
 a {
-    color: aliceblue;
+    color: #4aabff;
     text-decoration: none;
+
+    &:hover {
+        color: #4687bb;
+    }
 }
 
 .introCard {
-    margin: 5% 0 5% 5%; //no left padding
+    margin: 5% 5% 5% 5%;
 }
 
 .navLink {
@@ -73,13 +87,18 @@ a {
     height: 40vh; 
 }
 
+.content {
+    p {
+        text-indent: 50px;
+        letter-spacing: 1px;
+        line-height: 1.8;
+    }
+    margin: 5% 20% 0% 20%;
+}
 
 
 .footer {
-    position: fixed;
     padding: 2% 2% 10vh 2%;
-    left: 0;
-    bottom: 0;
     height: 10vh;
     width: 100%;
     background-color: #2B2A33;
