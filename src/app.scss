@@ -97,6 +97,23 @@ a {
 
 }
 
+.resume {
+    h3 {
+        font-weight: bold;
+    }
+
+    ul {
+        list-style-type: none;
+      }
+      ul li:before {
+        content: '\2014';
+        position: absolute;
+        margin-left: -35px;
+      }
+
+    margin: 5% 17% 0% 17%;
+}
+
 @media(max-width: 900px) {
     .content {
         margin: 5% 15% 0% 15%;
