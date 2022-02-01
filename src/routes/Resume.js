@@ -1,6 +1,9 @@
 import React from "react";
 import { AiFillLinkedin, AiFillMail, AiFillGithub } from "react-icons/ai"
 import { SiAiohttp } from "react-icons/si"
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 
 
 const Resume = (props) => {
@@ -8,20 +11,43 @@ const Resume = (props) => {
         <div className="resume">
             <h1>Taylor Newman</h1>
             <h5>Guelph, Ontario</h5>
-            <h5><a href="mailto:newmant@uoguelph.ca"><AiFillMail/>  newmant@uoguelph.ca</a></h5>
-            <h5><a href="http://linkedin.com/in/taylor-k-newman"><AiFillLinkedin/> LinkedIn</a></h5>
-            <h5><a href="http://www.tnewman.ca"><SiAiohttp/> Personal Website</a></h5>
-            <h5><a href="https://github.com/tanew7391/"><AiFillGithub/> GitHub</a></h5>
+            <h5><a href="mailto:newmant@uoguelph.ca"><AiFillMail />  newmant@uoguelph.ca</a></h5>
+            <h5><a href="http://linkedin.com/in/taylor-k-newman"><AiFillLinkedin /> LinkedIn</a></h5>
+            <h5><a href="http://www.tnewman.ca"><SiAiohttp /> Personal Website</a></h5>
+            <h5><a href="https://github.com/tanew7391/"><AiFillGithub /> GitHub</a></h5>
 
 
             <h3>Summary</h3>
             <p>Computer Science Major (CO-OP) and Applied Geomatics Minor at The University of Guelph</p>
             <h3>Skills</h3>
-            <p><b>Languages:  </b>                                 C    Java    R    Python    JavaScript (ES6)    HTML    CSS3    C++</p>
-            <p><b>Frameworks/Technologies:</b> ArcGIS    Node.JS    React    JUnit    Express    REST</p>
-            <p><b>Development Tools:</b>                    Linux    Github    VS Code    Gradle    Maven    Virtual Machines    Bash</p>
+            <Container>
+                <Row>
+                    <Col>
+                        <p><b>Languages:</b></p>
+                    </Col>
+                    <Col>
+                        <p>C, Java, R, Python, JavaScript(ES6), HTML, CSS3, C++</p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <p><b>Frameworks/Technologies:</b></p>
+                    </Col>
+                    <Col>
+                        <p> ArcGIS, Node.JS, React, JUnit, Express, REST</p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <p><b>Development Tools:</b></p>
+                    </Col>
+                    <Col>
+                        <p>Linux, Github, VS Code, Gradle, Maven, Virtual Machines, Bash</p>
+                    </Col>
+                </Row>
+            </Container>
             <h3>Professional Experience</h3>
-            <h5>September 2021 – December 2021</h5>    
+            <h5>September 2021 – December 2021</h5>
             <h4>GIS Technician, Agriculture and Agri-food Canada, Ottawa, Ontario</h4>
             <ul>
                 <li>
@@ -35,7 +61,7 @@ const Resume = (props) => {
                 </li>
             </ul>
             <h3>Extra-Curriculars</h3>
-            <h5>January 2019 – June 2019</h5>    
+            <h5>January 2019 – June 2019</h5>
             <h4>First Robotics Canada 2019 – Team 4917’s (Sir Lancerbot) Programming Team</h4>
             <ul>
                 <li>
@@ -50,7 +76,7 @@ const Resume = (props) => {
             </ul>
             <h3>Projects</h3>
             <h5>December 2021</h5>
-            <h4>Personal Website – <a href="/">http://www.tnewman.ca</a>    <a href="https://github.com/tanew7391/website_frontend"><AiFillGithub/></a></h4>
+            <h4>Personal Website – <a href="/">http://www.tnewman.ca</a>    <a href="https://github.com/tanew7391/website_frontend"><AiFillGithub /></a></h4>
             <ul>
                 <li>
                     Developed a website for showcasing my experiences and my personal hobbies.
@@ -60,7 +86,7 @@ const Resume = (props) => {
                 </li>
             </ul>
             <h5>June 2019</h5>
-            <h4>TMMCity <a href="https://github.com/tanew7391/TMMCity"><AiFillGithub/></a></h4>
+            <h4>TMMCity <a href="https://github.com/tanew7391/TMMCity"><AiFillGithub /></a></h4>
             <ul>
                 <li>
                     Used the Slick2D game library to build a multi functional city simulator game with Java.

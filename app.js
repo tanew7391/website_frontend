@@ -7,6 +7,7 @@ const path = require("path");
 
 app.use(express.static(path.join(__dirname, process.env.REACT_LOCATION)));
 const portNum = process.env.PORT || 8001;
+const spotApiPass = process.env.SAPI
 
 const postList = [
     {
