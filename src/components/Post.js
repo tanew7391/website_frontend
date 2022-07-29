@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 
 const Post = (props) => {
     let params = useParams();
-    let [post, setPost] = useState('No Post Found')
+    let [post, setPost] = useState('Loading')
 
     useEffect(() => {
         fetch('/api/posts/' + params.postid)
@@ -13,7 +13,10 @@ const Post = (props) => {
             }).then((response) => {
                 setPost(response);
             })
-            .catch(console.log)
+            .catch((msg) => {
+                console.log(msg)
+                setPost('No Post Found!');
+            })
     }, [params.postid])
     return (
         <ReactMarkdown>{post}</ReactMarkdown>
