@@ -24,6 +24,7 @@
   },
   "scripts": {
     "start": "node app.js",
+    "start-online": "npm install && node app.js",
     "start-dev": "concurrently \"npm run start-react\" \"npm run start-node\"",
     "start-react": "PORT=8000 react-scripts start",
     "start-node": "NODE_ENV=development npx nodemon app.js",
