@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { v4 } from 'uuid'
 import LinkList from "../components/LinkList";
-import ExperienceImg from '../static/img/experience.jpg'
-import MusicImg from "../static/img/music.jpg"
 
 class MainView extends Component {
 
@@ -11,23 +9,23 @@ class MainView extends Component {
             title: "GitHub",
             href: "https://github.com/tanew7391",
             icon: "https://cdn3.iconfinder.com/data/icons/inficons/512/github.png",
-            desc: "Click to go to my GitHub page.",
+            desc: "My GitHub page.",
             external: true,
             id: v4()
         },
         {
             title: "Experience",
             href: "/experience",
-            icon: ExperienceImg,
-            desc: "Click to see my resume and work experiences.",
+            icon: "https://images.ctfassets.net/odf8gczm8w1b/6vOoCdjWb3xXkNK2iM9qpS/8256527705debc21639494a55f33baf3/experience.jpg",
+            desc: "My resume and work experiences.",
             external: false,
             id: v4()
         },
         {
-            title: "Music Blog",
+            title: "Blog",
             href: "/blog",
-            desc: "Click to see what I'm listening to right now.",
-            icon: MusicImg,
+            desc: "My projects and interests.",
+            icon: "https://images.ctfassets.net/odf8gczm8w1b/1aPdhfyY4LZpCtJP38bxab/a681f245635faad706f90f4b7c9ed5fe/music.jpg",
             external: false,
             id: v4()
         }

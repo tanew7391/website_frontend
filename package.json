@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "@contentful/rich-text-types": "^15.12.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -23,12 +25,10 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "start": "node app.js",
-    "start-online": "node app.js",
-    "start-dev": "concurrently \"npm run start-react\" \"npm run start-node\"",
-    "start-react": "PORT=8000 react-scripts start",
-    "start-node": "NODE_ENV=development npx nodemon app.js",
-    "build": "npm install && react-scripts build",
+    "start": "react-scripts start",
+    "start-dev": "PORT=8000 react-scripts start",
+    "build": "react-scripts build",
+    "install-build": "npm install && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
