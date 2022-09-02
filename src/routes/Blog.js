@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import { v4 } from "uuid";
 import Post from "../components/Post"
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -15,6 +16,7 @@ const query = `
         title
         sys {
             firstPublishedAt
+            publishedAt
         }
         blogImage {
             url
@@ -46,13 +48,11 @@ const Blog = (props) => {
             });
     }, []);
 
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+
     return (
         <>
             <Navbar />
-            <div className="introCard">
-                <h1>Blog</h1>
-                <h2>My Interests On Display</h2>
-            </div>
             <Container fluid>
                 <Row>
                     <Col md="auto">
@@ -61,20 +61,35 @@ const Blog = (props) => {
                     <Col>
                         <Routes>
                             <Route path="/" element={
-                                posts.map(post => {
-                                    return (
-                                        <>
-                                            <Link to={post.id}>
-                                            {post.blogImage &&
-                                                <img href={post.blogImage.url}/>
-                                            }
-                                            <h1>{post.title}</h1>
-                                            <p>{post.sys.firstPublishedAt}</p>
-                                            </Link>
-                                        </>
+                                <>
+                                    <div className="introCard">
+                                        <h1>Blog</h1>
+                                        <h2>My Interests On Display</h2>
+                                    </div>
+                                    {posts.map(post => {
+                                        return (
+                                            <div className="blogentry" key={v4()}>
+                                                <Link to={post.id}>
+                                                    <div className="inline-block">
+                                                        {post.blogImage &&
+                                                            <img src={post.blogImage.url} />
+                                                        }
+                                                        <h1 className="inline-block">{post.title}</h1>
+                                                    </div>
+                                                    <div>
+                                                        {post.sys && post.sys.firstPublishedAt &&
+                                                            <p className="inline-block">First Published: {(new Date(post.sys.publishedAt)).toDateString(options)}</p>
+                                                        }
+                                                        {post.sys && post.sys.publishedAt && post.sys.firstPublishedAt && post.sys.publishedAt !== post.sys.firstPublishedAt &&
+                                                            <p className="inline-block">&ensp; Modified On: {(new Date(post.sys.publishedAt)).toDateString(options)}</p>
+                                                        }
+                                                    </div>
+                                                </Link>
+                                            </div>
 
-                                    )
-                                })
+                                        )
+                                    })}
+                                </>
                             } />
                             <Route path="/:postid" element={<Post />} />
                             <Route path="/*" element={<Error errorVal={404} />} />

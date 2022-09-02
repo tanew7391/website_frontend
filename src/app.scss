@@ -97,6 +97,26 @@ a {
 
 }
 
+.inline-block {
+    display: inline-block;
+}
+
+.blogentry {
+    margin: 0% 10% 0% 5%;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    a {
+        display:block;
+        padding: 3% 0% 3% 0%;
+    }
+    img {
+        border-radius: 50%;
+        width: 15vh;
+        height: 15vh;
+        object-fit: cover;
+    }
+}
+
 .resume {
     h3 {
         font-weight: bold;

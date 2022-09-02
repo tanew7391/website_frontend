@@ -8,7 +8,7 @@ const MarkDownPromise = (props) => {
         props.promise.then((data) => {
             setBody(data)
         });
-    }, [])
+    }, [props.promise])
 
     return (
         <ReactMarkdown>{body}</ReactMarkdown>

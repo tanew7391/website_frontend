@@ -3,9 +3,10 @@ import LinkList from "../components/LinkList";
 import Resume from "./Resume";
 import { v4 } from "uuid";
 import { Routes, Route } from "react-router-dom";
-import Workterm from "./Workterm";
 import Error from "./Error";
 import Navbar from "../components/NavBar"
+import AAFC from "./AAFC";
+import StatCan from "./StatCan";
 
 class Experience extends React.Component {
 
@@ -13,7 +14,7 @@ class Experience extends React.Component {
         {
             title: "Resume",
             href: "resume",
-            icon: "https://thumbs.dreamstime.com/b/written-paper-icon-vector-sign-symbol-isolated-white-back-background-your-web-mobile-app-design-logo-concept-133754707.jpg",
+            icon: "https://images.ctfassets.net/odf8gczm8w1b/3mw56maMNmWh3qEQRNakED/1d58651bf699e19514431838b8ee6178/clem-onojeghuo-fY8Jr4iuPQM-unsplash.jpg?fit=fill&h=400&w=400",
             desc: "My resume.",
             external: false,
             id: v4()
@@ -23,6 +24,14 @@ class Experience extends React.Component {
             href: "aafc2021",
             icon: "https://images.ctfassets.net/odf8gczm8w1b/36wZTzUSm3BZS5IRXsaWDa/a04d60dabb8f8de208befe6dc7a4476c/AAFC.jpg",
             desc: "My work experience at Agriculture Canada 2021",
+            external: false,
+            id: v4()
+        },
+        {
+            title: "Statistics Canada 2022",
+            href: "statcan2022",
+            icon: "https://images.ctfassets.net/odf8gczm8w1b/5UcBjtsMx1AXaoZQzd8m2x/f92ae0e03200f7ef223fad3cd29ccfa5/statscanlogoforweb.jpg?fit=fill&h=400&w=400",
+            desc: "My work experience at Statistics Canada 2022",
             external: false,
             id: v4()
         }
@@ -40,7 +49,8 @@ class Experience extends React.Component {
                     </>
                 }/>
                 <Route path="resume" element={<Resume />}/>
-                <Route path="aafc2021" element={<Workterm />}/>
+                <Route path="aafc2021" element={<AAFC />}/>
+                <Route path="statcan2022" element={<StatCan />}/>
                 <Route path="*" element={<Error errorVal={404}/>}/>
 
             </Routes>

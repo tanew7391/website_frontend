@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types"
-import MarkDownPromise from "./MarkDownPromise";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import ContentfulRender from "./ContentfulRender";
 
 const Post = (props) => {
     let params = useParams();
-    let [post, setPost] = useState({ title: "Post Loading" })
-    let [postBody, setPostBody] = useState(<h1>Nothing to Display!</h1>)
+    let [postJson, setPostJson] = useState({ title: "Post Loading" })
+    let [postRendered, setPostRendered] = useState(<hr />)
 
 
     useEffect(() => {
@@ -19,7 +20,6 @@ const Post = (props) => {
                 sys {
                     firstPublishedAt
                     publishedAt
-                    publishedVersion
                 }
                 blogImage {
                     url
@@ -43,68 +43,33 @@ const Post = (props) => {
           }
         `
 
-        const syncFetch = async (subset) => {
-            return await fetch(subset.url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw Error(response.statusText)
-                    }
-                    return response.text()
-                })
-                .then((data) => {
-                    return data;
-                }).catch((error) => {
-                    return error;
-                })
-            }
-
-        fetch(`https://graphql.contentful.com/content/v1/spaces/odf8gczm8w1b/`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer BJCVWsO-7uCvWUtgAbMxiv9CDHw2W9s8wKmEm0lzzkE",
-            },
-            body: JSON.stringify({ query }),
-        })
-            .then((response) => response.json())
-            .then(({ data, errors }) => {
-                if (errors) {
-                    console.error(errors);
-                    setPost({ title: "No Post Found!" });
-                }
-                setPost(data.blogPostCollection.items[0]);
-                const tempPost = data.blogPostCollection.items[0];
-                const options = {
-                    renderNode: {
-                        [BLOCKS.EMBEDDED_ASSET]: (node) => {
-                            let subset = tempPost.blogBody.links.assets.block.filter((element) => {
-                                return element.sys.id === node.data.target.sys.id
-                            })[0]
-                            console.log(subset)
-                            if (subset.contentType === "image/jpeg") {
-                                return <img src={subset.url} />
-                            } else if (subset.contentType === "text/markdown") {
-                                let assetPromise = syncFetch(subset);
-                                return <MarkDownPromise promise={assetPromise}/>
-                            }
-                        }
-                    }
-                };
-                setPostBody(documentToReactComponents(tempPost.blogBody.json, options))
-            });
+        ContentfulRender(query, setPostJson, setPostRendered);
 
     }, [])
 
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
     return (
         <>
-            <h1>{post.title}</h1>
-            {post.blogImage &&
-                <img src={post.blogImage.url} />
-            }
-            {post.firstPublishedAt &&
-                <p>{post.firstPublishedAt}</p>
-            }
-            {postBody}
+            <div className="introCard">
+                {postJson.title &&
+                    <h1>{postJson.title}</h1>
+                }
+                {postJson.blogImage &&
+                    <img src={postJson.blogImage.url} />
+                }
+                {postJson.sys && postJson.sys.firstPublishedAt &&
+                    <p>Originally Posted: {(new Date(postJson.sys.firstPublishedAt)).toDateString(options)}</p>
+                }
+                {postJson.sys && postJson.sys.publishedAt && postJson.sys.firstPublishedAt && postJson.sys.publishedAt !== postJson.sys.firstPublishedAt &&
+                    <p>Modified On: {(new Date(postJson.sys.publishedAt)).toDateString(options)}</p>
+                }
+            </div>
+
+
+            <div className="content">
+                {postRendered}
+            </div>
         </>
 
 
