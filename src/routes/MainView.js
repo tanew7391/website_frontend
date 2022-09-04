@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { v4 } from 'uuid'
+import AirportText from "../components/AirportText";
 import LinkList from "../components/LinkList";
 
 class MainView extends Component {
@@ -36,7 +37,7 @@ class MainView extends Component {
             <>
                 <div className="introCard">
                     {/* <img src="https://avatars.githubusercontent.com/u/7423736?v=4"/> */}
-                    <h1>Taylor Newman</h1>
+                    <AirportText text="Taylor Newman" wrapper={'h1'}/>
                     <h4>Third Year Computer Science Student at the University of Guelph</h4>
                 </div>
                 <LinkList links={this.sections} />

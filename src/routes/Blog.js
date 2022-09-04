@@ -97,7 +97,6 @@ const Blog = (props) => {
                     </Col>
                 </Row>
             </Container>
-
         </>);
 
 }
