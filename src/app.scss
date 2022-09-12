@@ -93,9 +93,20 @@ a {
         letter-spacing: 1px;
         line-height: 1.8;
     }
+
+    code {
+        text-indent: 0px;
+    }
+
     margin: 5% 17% 0% 17%;
 
 }
+
+code {
+    white-space: pre-wrap;
+    color: floralwhite;
+}
+
 
 .inline-block {
     display: inline-block;

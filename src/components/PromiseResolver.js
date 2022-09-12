@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
 
-const MarkDownPromise = (props) => {
+const PromiseResolver = (props) => {
     let [body, setBody] = useState('# Loading');
 
     useEffect(() => {
@@ -10,8 +9,10 @@ const MarkDownPromise = (props) => {
         });
     }, [props.promise])
 
+    const Wrapper = props.wrapper;
+
     return (
-        <ReactMarkdown>{body}</ReactMarkdown>
+        <Wrapper>{body}</Wrapper>
     )
 }
-export default MarkDownPromise;
+export default PromiseResolver;
