@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ContentfulRender from "../components/ContentfulRender";
 
 
-const StatCan = (props) => {
+const ProNav = (props) => {
     let [postJson, setPostJson] = useState({ title: "Post Loading" })
     let [postRendered, setPostRendered] = useState(<hr/>)
 
@@ -10,7 +10,7 @@ const StatCan = (props) => {
     useEffect(() => {
         let query = `
         {
-            blogPostCollection (where: {id: "statistics-canada"} limit: 1) {
+            blogPostCollection (where: {id: "pronavigator"} limit: 1) {
               items {
                 sys {
                     firstPublishedAt
@@ -34,18 +34,16 @@ const StatCan = (props) => {
             }
           }
         `
-
         ContentfulRender(query, setPostJson, setPostRendered);
-
     }, [])
 
     return (
         <>
             <div className="introCard">
-                <h1>Statistics Canada</h1>
-                <h2>IT Specialist</h2>
+                <h1>ProNavigator</h1>
+                <h2>Software Developer</h2>
                 <h3>CO-OP Position</h3>
-                <h3>May 16, 2022 - August 31, 2022</h3>
+                <h3>January 2, 2023 - August 25, 2023</h3>
             </div>
             <div className="content">
                 {postRendered &&
@@ -55,4 +53,4 @@ const StatCan = (props) => {
         </>
     )
 }
-export default StatCan;
+export default ProNav;

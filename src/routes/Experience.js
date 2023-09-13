@@ -7,6 +7,7 @@ import Error from "./Error";
 import Navbar from "../components/NavBar"
 import AAFC from "./AAFC";
 import StatCan from "./StatCan";
+import ProNav from "./ProNav";
 
 class Experience extends React.Component {
 
@@ -34,6 +35,14 @@ class Experience extends React.Component {
             desc: "My work experience at Statistics Canada 2022",
             external: false,
             id: v4()
+        },
+        {
+            title: "ProNavigator 2022",
+            href: "pronavigator2023",
+            icon: "https://www.pronavigator.ai/hs-fs/hubfs/pronavigator-logo-tri-blue-rgb-1.png?width=1759&height=963&name=pronavigator-logo-tri-blue-rgb-1.png",
+            desc: "My work experience at ProNavigator 2023",
+            external: false,
+            id: v4()
         }
     ]
 
@@ -51,6 +60,7 @@ class Experience extends React.Component {
                 <Route path="resume" element={<Resume />}/>
                 <Route path="aafc2021" element={<AAFC />}/>
                 <Route path="statcan2022" element={<StatCan />}/>
+                <Route path="pronavigator2023" element={<ProNav />}/>
                 <Route path="*" element={<Error errorVal={404}/>}/>
 
             </Routes>
